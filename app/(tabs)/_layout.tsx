@@ -1,33 +1,52 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import SearchIcon from "@/components/icons/tabBar/SearchIcon";
+import HeartIcon from "@/components/icons/tabBar/HeartIcon";
+import TripsIcon from "@/components/icons/tabBar/TripsIcon";
+import MessagesIcon from "@/components/icons/tabBar/MessagesIcon";
+import ProfileIcon from "@/components/icons/tabBar/ProfileIcon";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Explorer", // TODO: use i18n with translation key
+          tabBarIcon: ({ color }) => <SearchIcon color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="wishlists"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Favoris", // TODO: use i18n with translation key
+          tabBarIcon: ({ color }) => <HeartIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="trips"
+        options={{
+          title: "Voyages", // TODO: use i18n with translation key
+          tabBarIcon: ({ color }) => <TripsIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="inbox"
+        options={{
+          title: "Messages", // TODO: use i18n with translation key
+          tabBarIcon: ({ color }) => <MessagesIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profil", // TODO: use i18n with translation key
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
         }}
       />
     </Tabs>
