@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import React from "react";
 
+import { colors } from "@/core/tamagui.config";
 import SearchIcon from "@/components/icons/tabBar/SearchIcon";
 import HeartIcon from "@/components/icons/tabBar/HeartIcon";
 import TripsIcon from "@/components/icons/tabBar/TripsIcon";
@@ -33,6 +34,7 @@ export default function TabLayout() {
         options={{
           title: "Voyages", // TODO: use i18n with translation key
           tabBarIcon: ({ color }) => <TripsIcon color={color} />,
+          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
