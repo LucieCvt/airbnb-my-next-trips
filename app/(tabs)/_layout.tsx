@@ -1,13 +1,14 @@
 import { Tabs } from "expo-router";
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 import Header from "@/components/Header";
-import HeartIcon from "@/components/icons/tabBar/HeartIcon";
-import MessagesIcon from "@/components/icons/tabBar/MessagesIcon";
-import ProfileIcon from "@/components/icons/tabBar/ProfileIcon";
-import SearchIcon from "@/components/icons/tabBar/SearchIcon";
-import TripsIcon from "@/components/icons/tabBar/TripsIcon";
+import {
+  HeartIcon,
+  MessagesIcon,
+  ProfileIcon,
+  SearchIcon,
+  TripsIcon,
+} from "@/components/icons/tabBar";
 import { colors } from "@/core/tamagui.config";
 import { List } from "@tamagui/lucide-icons";
 
@@ -25,6 +26,7 @@ const TabLayout = () => {
         options={{
           title: "Explorer", // TODO: use i18n with translation key
           tabBarIcon: ({ color }) => <SearchIcon color={color} />,
+          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
@@ -32,6 +34,7 @@ const TabLayout = () => {
         options={{
           title: "Favoris", // TODO: use i18n with translation key
           tabBarIcon: ({ color }) => <HeartIcon color={color} />,
+          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
@@ -54,6 +57,7 @@ const TabLayout = () => {
         options={{
           title: "Messages", // TODO: use i18n with translation key
           tabBarIcon: ({ color }) => <MessagesIcon color={color} />,
+          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
@@ -61,6 +65,7 @@ const TabLayout = () => {
         options={{
           title: "Profil", // TODO: use i18n with translation key
           tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
+          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
     </Tabs>

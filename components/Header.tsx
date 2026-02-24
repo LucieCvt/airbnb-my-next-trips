@@ -1,4 +1,4 @@
-import React, { type ComponentProps } from "react";
+import type { ComponentProps } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, Separator, Text, XStack, YStack } from "tamagui";
 
@@ -11,7 +11,7 @@ const Header = ({ title, rightIcon }: HeaderProps) => {
   const { top } = useSafeAreaInsets();
 
   return (
-    <YStack backgroundColor="white" paddingTop={top}>
+    <YStack backgroundColor="$white" paddingTop={top}>
       <XStack
         justifyContent="space-between"
         paddingHorizontal="$4"
@@ -22,7 +22,7 @@ const Header = ({ title, rightIcon }: HeaderProps) => {
           {title}
         </Text>
         {rightIcon && (
-          <Button circular icon={rightIcon} backgroundColor="$grayBackground" />
+          <Button circular icon={rightIcon} backgroundColor="$grayBackground" accessibilityRole="button" accessibilityLabel="Menu" />
         )}
       </XStack>
       <Separator />
