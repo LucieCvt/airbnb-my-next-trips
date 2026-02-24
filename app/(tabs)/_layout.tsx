@@ -13,10 +13,12 @@ import { colors } from "@/core/tamagui.config";
 import { List } from "@tamagui/lucide-icons";
 
 const TabLayout = () => {
-  const { t } = useTranslation("", { keyPrefix: "tripsScreen" });
+  const { t } = useTranslation("", { keyPrefix: "tabs" });
+  const { t: tTrips } = useTranslation("", { keyPrefix: "tripsScreen" });
 
   return (
     <Tabs
+      initialRouteName="trips"
       screenOptions={{
         headerShown: false,
       }}
@@ -24,7 +26,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Explorer", // TODO: use i18n with translation key
+          title: t("explore"),
           tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           tabBarActiveTintColor: colors.pinkRed,
         }}
@@ -32,7 +34,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="wishlists"
         options={{
-          title: "Favoris", // TODO: use i18n with translation key
+          title: t("wishlists"),
           tabBarIcon: ({ color }) => <HeartIcon color={color} />,
           tabBarActiveTintColor: colors.pinkRed,
         }}
@@ -40,11 +42,11 @@ const TabLayout = () => {
       <Tabs.Screen
         name="trips"
         options={{
-          title: "Voyages", // TODO: use i18n with translation key
+          title: t("trips"),
           headerShown: true,
           header: () => (
             <Header
-              title={t("title")}
+              title={tTrips("title")}
               rightIcon={<List color="$black" size="$1.5" />}
             />
           ),
@@ -55,7 +57,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="inbox"
         options={{
-          title: "Messages", // TODO: use i18n with translation key
+          title: t("inbox"),
           tabBarIcon: ({ color }) => <MessagesIcon color={color} />,
           tabBarActiveTintColor: colors.pinkRed,
         }}
@@ -63,7 +65,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profil", // TODO: use i18n with translation key
+          title: t("profile"),
           tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
           tabBarActiveTintColor: colors.pinkRed,
         }}

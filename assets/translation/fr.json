@@ -1,4 +1,11 @@
 {
+  "tabs": {
+    "explore": "Explorer",
+    "wishlists": "Favoris",
+    "trips": "Voyages",
+    "inbox": "Messages",
+    "profile": "Profil"
+  },
   "tripsScreen": {
     "title": "Voyages",
     "hostName": "Hôte",
