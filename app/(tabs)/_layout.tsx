@@ -1,14 +1,19 @@
 import { Tabs } from "expo-router";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-import { colors } from "@/core/tamagui.config";
-import SearchIcon from "@/components/icons/tabBar/SearchIcon";
+import Header from "@/components/Header";
 import HeartIcon from "@/components/icons/tabBar/HeartIcon";
-import TripsIcon from "@/components/icons/tabBar/TripsIcon";
 import MessagesIcon from "@/components/icons/tabBar/MessagesIcon";
 import ProfileIcon from "@/components/icons/tabBar/ProfileIcon";
+import SearchIcon from "@/components/icons/tabBar/SearchIcon";
+import TripsIcon from "@/components/icons/tabBar/TripsIcon";
+import { colors } from "@/core/tamagui.config";
+import { List } from "@tamagui/lucide-icons";
 
-export default function TabLayout() {
+const TabLayout = () => {
+  const { t } = useTranslation("", { keyPrefix: "tripsScreen" });
+
   return (
     <Tabs
       screenOptions={{
@@ -33,6 +38,13 @@ export default function TabLayout() {
         name="trips"
         options={{
           title: "Voyages", // TODO: use i18n with translation key
+          headerShown: true,
+          header: () => (
+            <Header
+              title={t("title")}
+              rightIcon={<List color="$black" size="$1.5" />}
+            />
+          ),
           tabBarIcon: ({ color }) => <TripsIcon color={color} />,
           tabBarActiveTintColor: colors.pinkRed,
         }}
@@ -53,4 +65,6 @@ export default function TabLayout() {
       />
     </Tabs>
   );
-}
+};
+
+export default TabLayout;
