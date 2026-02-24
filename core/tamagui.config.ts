@@ -1,9 +1,10 @@
-import { createTamagui, createFont } from "tamagui";
 import { defaultConfig } from "@tamagui/config/v5";
+import { createFont, createTamagui } from "tamagui";
 
 export const colors = {
   grayBackground: "#F2F2F2",
   blackBackground: "#222222",
+  grayText: "#6A6A6A",
   pinkRed: "#E31C5D",
 };
 
@@ -17,6 +18,7 @@ const montserratFont = createFont({
     4: 18,
     5: 20,
     6: 22,
+    6.5: 26,
     7: 28,
     8: 32,
     9: 42,
@@ -51,12 +53,14 @@ const config = createTamagui({
       background: "#FFFFFF",
       grayBackground: colors.grayBackground,
       blackBackground: colors.blackBackground,
+      grayText: colors.grayText,
       pinkRed: colors.pinkRed,
     },
     dark: {
       ...defaultConfig.themes.dark,
       grayBackground: colors.grayBackground,
       blackBackground: colors.blackBackground,
+      grayText: colors.grayText,
       pinkRed: colors.pinkRed,
     },
   },
