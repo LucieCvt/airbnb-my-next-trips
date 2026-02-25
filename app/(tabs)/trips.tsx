@@ -1,6 +1,6 @@
 import tripsData from "@/api/tripsData.json";
 import { CardFooter } from "@/components/Card";
-import Timeline from "@/components/trips/Timeline";
+import TimelineBlock from "@/components/trips/TimelineBlock";
 import TripCard from "@/components/trips/TripCard";
 import { getMonthsUntil } from "@/utils/date";
 import { useTranslation } from "react-i18next";
@@ -27,7 +27,7 @@ const TripsScreen = () => {
             />
           }
         />
-        <Timeline trip={trip} />
+        <TimelineBlock trip={trip} />
       </YStack>
     </ScrollView>
   );
