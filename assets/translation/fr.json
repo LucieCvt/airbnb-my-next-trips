@@ -1,0 +1,17 @@
+{
+  "tabs": {
+    "explore": "Explorer",
+    "wishlists": "Favoris",
+    "trips": "Voyages",
+    "inbox": "Messages",
+    "profile": "Profil"
+  },
+  "tripsScreen": {
+    "title": "Voyages",
+    "hostName": "Hôte",
+    "displayAd": "Afficher l'annonce",
+    "checkIn": "Arrivée à partir de",
+    "checkOut": "Départ avant",
+    "inMonths": "Dans {{count}} mois"
+  }
+}
