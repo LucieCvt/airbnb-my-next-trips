@@ -3,8 +3,8 @@ import { createFont, createTamagui } from "tamagui";
 
 export const colors = {
   grayBackground: "#F2F2F2",
-  blackBackground: "#222222",
   grayText: "#6A6A6A",
+  blackText: "#222222",
   pinkRed: "#E31C5D",
 };
 
@@ -52,14 +52,14 @@ const config = createTamagui({
       ...defaultConfig.themes.light,
       background: "#FFFFFF",
       grayBackground: colors.grayBackground,
-      blackBackground: colors.blackBackground,
+      blackBackground: colors.blackText,
       grayText: colors.grayText,
       pinkRed: colors.pinkRed,
     },
     dark: {
       ...defaultConfig.themes.dark,
       grayBackground: colors.grayBackground,
-      blackBackground: colors.blackBackground,
+      blackBackground: colors.blackText,
       grayText: colors.grayText,
       pinkRed: colors.pinkRed,
     },

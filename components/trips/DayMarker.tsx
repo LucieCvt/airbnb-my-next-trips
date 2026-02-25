@@ -9,7 +9,7 @@ const MARKER_SIZE = 36;
 
 const DayMarker = ({ dayName, dayNumber, ...props }: DayMarkerProps) => (
   <YStack alignItems="center" {...props}>
-    <Text fontSize="$2" fontWeight="$6" color="$black">
+    <Text fontSize="$2" fontWeight="$6" color="$blackText">
       {dayName}
     </Text>
     <YStack
@@ -21,7 +21,7 @@ const DayMarker = ({ dayName, dayNumber, ...props }: DayMarkerProps) => (
       alignItems="center"
       marginTop="$1"
     >
-      <Text color="$grayText" fontWeight="$7" fontSize="$2">
+      <Text color="$grayText" fontWeight="$7" fontSize="$3">
         {dayNumber}
       </Text>
     </YStack>

@@ -7,7 +7,10 @@ import Badge from "../Badge";
 import { Card } from "../Card";
 
 type TripCardProps = {
-  trip: Pick<Trip, "title" | "bookingImage" | "bookingStart" | "bookingEnd" | "hostName">;
+  trip: Pick<
+    Trip,
+    "title" | "bookingImage" | "bookingStart" | "bookingEnd" | "hostName"
+  >;
   badgeText: string;
   footer?: ReactNode;
 };
@@ -24,7 +27,12 @@ const TripCard = ({ trip, badgeText, footer }: TripCardProps) => {
     <Card>
       <YStack padding="$2.5">
         <ZStack aspectRatio={16 / 9} borderRadius="$7" overflow="hidden">
-          <Image src={trip.bookingImage} width="100%" height="100%" accessibilityLabel={trip.title} />
+          <Image
+            src={trip.bookingImage}
+            width="100%"
+            height="100%"
+            accessibilityLabel={trip.title}
+          />
           <Badge label={badgeText} position="absolute" top="$2.5" left="$2.5" />
         </ZStack>
       </YStack>
@@ -33,11 +41,11 @@ const TripCard = ({ trip, badgeText, footer }: TripCardProps) => {
         <Text fontSize="$6.5" fontWeight="$7">
           {trip.title}
         </Text>
-        <Text color="$grayText" fontSize="$3">
+        <Text color="$grayText" fontSize="$2" fontWeight="$6">
           {dateRange} · {t("hostName")} : {trip.hostName}
         </Text>
 
-        <Separator marginVertical="$2" />
+        <Separator marginVertical="$3" />
         {footer}
       </YStack>
     </Card>

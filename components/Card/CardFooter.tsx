@@ -10,19 +10,30 @@ type CardFooterProps = {
 const CardFooter = ({ guestImage, buttonLabel }: CardFooterProps) => {
   return (
     <XStack alignItems="center" justifyContent="space-between">
-      <Image src={guestImage} width={AVATAR_SIZE} height={AVATAR_SIZE} borderRadius={AVATAR_SIZE / 2} />
+      <Image
+        src={guestImage}
+        width={AVATAR_SIZE}
+        height={AVATAR_SIZE}
+        borderRadius={AVATAR_SIZE / 2}
+      />
       <Button
         unstyled
         accessibilityRole="button"
         accessibilityLabel={buttonLabel}
         backgroundColor="$grayBackground"
         borderRadius="$5"
-        paddingVertical="$3"
-        paddingHorizontal="$6"
+        paddingVertical="$4"
+        paddingHorizontal="$7"
         alignItems="center"
         justifyContent="center"
+        maxWidth={155}
       >
-        <Text fontWeight="$6" fontSize="$2" textAlign="center">
+        <Text
+          color="$blackText"
+          fontWeight="$7"
+          fontSize="$2"
+          textAlign="center"
+        >
           {buttonLabel}
         </Text>
       </Button>
