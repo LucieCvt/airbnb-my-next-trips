@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Text, View, XStack } from "tamagui";
 import { Card, type CardProps } from "../Card";
 

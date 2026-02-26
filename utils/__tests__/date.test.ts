@@ -1,9 +1,4 @@
-import {
-  formatDateRange,
-  formatDayLabel,
-  formatTime,
-  getMonthsUntil,
-} from "../date";
+import { formatDateRange, formatDayLabel, formatTime, getMonthsUntil } from "../date";
 
 beforeEach(() => {
   jest.useFakeTimers();

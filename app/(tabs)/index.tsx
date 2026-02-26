@@ -1,10 +1,10 @@
+import { useTranslation } from "react-i18next";
+import { ScrollView, Text, YStack } from "tamagui";
 import tripsData from "@/api/tripsData.json";
 import { CardFooter } from "@/components/Card";
 import TimelineBlock from "@/components/trips/TimelineBlock";
 import TripCard from "@/components/trips/TripCard";
 import { getMonthsUntil } from "@/utils/date";
-import { useTranslation } from "react-i18next";
-import { ScrollView, Text, YStack } from "tamagui";
 
 const TripsScreen = () => {
   const { t } = useTranslation("", { keyPrefix: "tripsScreen" });
@@ -20,12 +20,7 @@ const TripsScreen = () => {
         <TripCard
           trip={trip}
           badgeText={t("inMonths", { count: monthsUntil })}
-          footer={
-            <CardFooter
-              guestImage={trip.guestImage}
-              buttonLabel={t("displayAd")}
-            />
-          }
+          footer={<CardFooter guestImage={trip.guestImage} buttonLabel={t("displayAd")} />}
         />
         <TimelineBlock trip={trip} />
       </YStack>

@@ -1,7 +1,7 @@
 import { View } from "tamagui";
 
 const ProfileScreen = () => {
-  return <View></View>;
+  return <View />;
 };
 
 export default ProfileScreen;

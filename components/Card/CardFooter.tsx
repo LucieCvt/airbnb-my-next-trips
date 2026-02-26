@@ -9,11 +9,7 @@ type CardFooterProps = {
 
 const CardFooter = ({ guestImage, buttonLabel }: CardFooterProps) => {
   return (
-    <XStack
-      alignItems="center"
-      justifyContent="space-between"
-      paddingVertical="$4.5"
-    >
+    <XStack alignItems="center" justifyContent="space-between" paddingVertical="$4.5">
       <Image
         src={guestImage}
         width={AVATAR_SIZE}
@@ -32,12 +28,7 @@ const CardFooter = ({ guestImage, buttonLabel }: CardFooterProps) => {
         justifyContent="center"
         maxWidth={155}
       >
-        <Text
-          color="$blackText"
-          fontWeight="$7"
-          fontSize="$2"
-          textAlign="center"
-        >
+        <Text color="$blackText" fontWeight="$7" fontSize="$2" textAlign="center">
           {buttonLabel}
         </Text>
       </Button>

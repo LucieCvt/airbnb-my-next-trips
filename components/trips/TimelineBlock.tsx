@@ -1,8 +1,8 @@
-import type { Trip } from "@/types/trip";
-import { formatDayLabel, formatTime } from "@/utils/date";
 import { DoorClosed, DoorOpen } from "@tamagui/lucide-icons";
 import { useTranslation } from "react-i18next";
 import { XStack, YStack } from "tamagui";
+import type { Trip } from "@/types/trip";
+import { formatDayLabel, formatTime } from "@/utils/date";
 import DayMarker from "./DayMarker";
 import InfoCard from "./InfoCard";
 

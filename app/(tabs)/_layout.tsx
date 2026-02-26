@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
+import { List } from "@tamagui/lucide-icons";
 import { useTranslation } from "react-i18next";
-
 import Header from "@/components/Header";
 import {
   HeartIcon,
@@ -10,7 +10,6 @@ import {
   TripsIcon,
 } from "@/components/icons/tabBar";
 import { colors } from "@/core/tamagui.config";
-import { List } from "@tamagui/lucide-icons";
 
 const TabLayout = () => {
   const { t } = useTranslation("", { keyPrefix: "tabs" });

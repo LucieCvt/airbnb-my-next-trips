@@ -1,5 +1,6 @@
 import * as React from "react";
-import Svg, { Path, SvgProps } from "react-native-svg";
+import Svg, { Path } from "react-native-svg";
+import type { SvgProps } from "react-native-svg";
 
 const TripsIcon = (props: SvgProps) => (
   <Svg width={18} height={20} fill="none" {...props}>

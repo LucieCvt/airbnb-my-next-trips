@@ -23,6 +23,7 @@
 - [Design System](#design-system)
 - [Internationalization](#internationalization)
 - [Testing](#testing)
+- [Code Quality](#code-quality)
 
 ---
 
@@ -49,7 +50,8 @@
 | **Internationalization** | [i18next](https://www.i18next.com) + react-i18next                             |
 | **Language**             | TypeScript 5.9 (strict mode)                                                   |
 | **Testing**              | Jest + jest-expo                                                               |
-| **Linting**              | ESLint (Expo config)                                                           |
+| **Linting**              | ESLint 9 (flat config, Expo + custom rules)                                    |
+| **Formatting**           | [Prettier](https://prettier.io) 3.x                                            |
 
 ---
 
@@ -105,14 +107,17 @@ Scan the QR code with **Expo Go** (Android) or the **Camera** app (iOS) to open 
 
 ## Available Scripts
 
-| Command        | Description                       |
-| -------------- | --------------------------------- |
-| `yarn start`   | Start the Expo development server |
-| `yarn ios`     | Run on iOS simulator              |
-| `yarn android` | Run on Android emulator           |
-| `yarn web`     | Run in the browser                |
-| `yarn lint`    | Lint code with ESLint             |
-| `yarn test`    | Run Jest tests                    |
+| Command             | Description                       |
+| ------------------- | --------------------------------- |
+| `yarn start`        | Start the Expo development server |
+| `yarn ios`          | Run on iOS simulator              |
+| `yarn android`      | Run on Android emulator           |
+| `yarn web`          | Run in the browser                |
+| `yarn lint`         | Lint code with ESLint             |
+| `yarn lint:fix`     | Lint and auto-fix issues          |
+| `yarn format`       | Format all files with Prettier    |
+| `yarn format:check` | Check formatting (CI)             |
+| `yarn test`         | Run Jest tests                    |
 
 ---
 
@@ -221,6 +226,33 @@ yarn test
   ✓ formatTime      — time formatting
   ✓ getMonthsUntil  — months remaining calculation
 ```
+
+---
+
+## Code Quality
+
+The project uses **ESLint** for linting and **Prettier** for formatting, configured to work together without conflicts.
+
+### ESLint
+
+Based on `eslint-config-expo` (flat config, ESLint 9) with additional custom rules:
+
+- **Import ordering** — automatic sorting (react > react-native > expo > @/ alias > relative)
+- **Consistent type imports** — enforces `import type` for type-only imports
+- **Self-closing components** — `<View />` instead of `<View></View>`
+- **No unnecessary JSX curly braces** — `prop="value"` instead of `prop={"value"}`
+
+### Prettier
+
+Configured in [.prettierrc](.prettierrc) to match the project's code style:
+
+- Double quotes, semicolons, 2-space indentation
+- Trailing commas, 100-char print width
+- LF line endings
+
+### VSCode Integration
+
+On save, **Prettier** formats the file and **ESLint** auto-fixes linting issues. Recommended extensions are listed in [.vscode/extensions.json](.vscode/extensions.json).
 
 ---
 

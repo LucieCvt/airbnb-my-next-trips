@@ -24,9 +24,7 @@ export const formatDateRange = (start: string, end: string, locale: string) => {
  */
 export const formatDayLabel = (dateStr: string, locale: string) => {
   const date = new Date(dateStr);
-  const dayName = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(
-    date,
-  );
+  const dayName = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(date);
   const dayNumber = date.getDate();
   return { dayName, dayNumber };
 };
@@ -49,9 +47,5 @@ export const formatTime = (dateStr: string, locale: string) => {
 export const getMonthsUntil = (dateStr: string): number => {
   const now = new Date();
   const target = new Date(dateStr);
-  return (
-    (target.getFullYear() - now.getFullYear()) * 12 +
-    target.getMonth() -
-    now.getMonth()
-  );
+  return (target.getFullYear() - now.getFullYear()) * 12 + target.getMonth() - now.getMonth();
 };

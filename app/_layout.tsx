@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
-import { TamaguiProvider } from "@tamagui/core";
 import {
   useFonts,
   Montserrat_400Regular,
@@ -11,6 +10,7 @@ import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
+import { TamaguiProvider } from "@tamagui/core";
 import config from "../core/tamagui.config";
 import "../core/i18n";
 

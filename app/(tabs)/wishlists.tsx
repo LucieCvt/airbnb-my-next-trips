@@ -1,7 +1,7 @@
 import { View } from "tamagui";
 
 const WishlistsScreen = () => {
-  return <View></View>;
+  return <View />;
 };
 
 export default WishlistsScreen;

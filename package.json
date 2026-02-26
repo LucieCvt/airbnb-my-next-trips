@@ -9,7 +9,11 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "test": "jest"
+    "lint:fix": "expo lint -- --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "precommit": "yarn lint && yarn format:check && yarn test"
   },
   "dependencies": {
     "@expo-google-fonts/montserrat": "^0.4.2",
