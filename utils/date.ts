@@ -1,8 +1,8 @@
-export const formatDateRange = (
-  start: string,
-  end: string,
-  locale: string,
-) => {
+/**
+ * Formats a date range into a readable string (e.g. "3 – 10 January" or "28 December – 4 January").
+ * When both dates fall in the same month, the month name is only displayed once.
+ */
+export const formatDateRange = (start: string, end: string, locale: string) => {
   const startDate = new Date(start);
   const endDate = new Date(end);
   const dayFormatter = new Intl.DateTimeFormat(locale, { day: "numeric" });
@@ -18,6 +18,10 @@ export const formatDateRange = (
   return `${monthDayFormatter.format(startDate)} – ${monthDayFormatter.format(endDate)}`;
 };
 
+/**
+ * Extracts the abbreviated weekday name and day number from a date string.
+ * Returns an object with `dayName` (e.g. "Mon") and `dayNumber` (e.g. 14).
+ */
 export const formatDayLabel = (dateStr: string, locale: string) => {
   const date = new Date(dateStr);
   const dayName = new Intl.DateTimeFormat(locale, { weekday: "short" }).format(
@@ -27,6 +31,9 @@ export const formatDayLabel = (dateStr: string, locale: string) => {
   return { dayName, dayNumber };
 };
 
+/**
+ * Formats a date string into a localized time string (e.g. "3:30 PM" or "15:30").
+ */
 export const formatTime = (dateStr: string, locale: string) => {
   const date = new Date(dateStr);
   return new Intl.DateTimeFormat(locale, {
@@ -35,6 +42,10 @@ export const formatTime = (dateStr: string, locale: string) => {
   }).format(date);
 };
 
+/**
+ * Calculates the number of months between now and a target date.
+ * Returns a positive number for future dates and negative for past dates.
+ */
 export const getMonthsUntil = (dateStr: string): number => {
   const now = new Date();
   const target = new Date(dateStr);
