@@ -22,7 +22,13 @@ const Header = ({ title, rightIcon }: HeaderProps) => {
           {title}
         </Text>
         {rightIcon && (
-          <Button circular icon={rightIcon} backgroundColor="$grayBackground" accessibilityRole="button" accessibilityLabel="Menu" />
+          <Button
+            circular
+            icon={rightIcon}
+            backgroundColor="$grayBackground"
+            accessibilityRole="button"
+            accessibilityLabel="Menu"
+          />
         )}
       </XStack>
       <Separator />

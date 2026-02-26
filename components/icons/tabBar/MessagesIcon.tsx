@@ -1,5 +1,5 @@
 import * as React from "react";
-import Svg, { SvgProps, Path } from "react-native-svg";
+import Svg, { Path, SvgProps } from "react-native-svg";
 
 const MessagesIcon = (props: SvgProps) => (
   <Svg width={20} height={18} fill="none" {...props}>
@@ -9,4 +9,5 @@ const MessagesIcon = (props: SvgProps) => (
     />
   </Svg>
 );
+
 export default MessagesIcon;

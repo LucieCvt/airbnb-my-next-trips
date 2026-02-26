@@ -8,12 +8,14 @@ export type CardProps = YStackProps & {
 const Card = ({ children, ...props }: CardProps) => (
   <YStack
     backgroundColor="$white"
-    borderRadius="$7"
+    borderColor="$grayBackground"
+    borderWidth={1}
+    borderRadius={24}
     shadowColor="$black"
     shadowOffset={{ width: 0, height: 4 }}
     shadowOpacity={0.12}
     shadowRadius={16}
-    elevation={8}
+    elevation={9}
     {...props}
   >
     {children}

@@ -10,14 +10,14 @@ type InfoCardProps = Omit<CardProps, "children"> & {
 
 const InfoCard = ({ image, label, icon, ...props }: InfoCardProps) => (
   <Card height={90} {...props}>
-    <XStack padding="$2" alignItems="center" gap="$3" flex={1}>
+    <XStack padding="$2.5" alignItems="center" gap="$3" flex={1}>
       <View
-        backgroundColor="$grayBackground"
+        backgroundColor="$otherGrayBackground"
         alignItems="center"
         justifyContent="center"
         aspectRatio={1}
         height="100%"
-        borderRadius={20}
+        borderRadius="$6"
       >
         {icon}
       </View>

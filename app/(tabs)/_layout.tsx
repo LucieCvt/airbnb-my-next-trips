@@ -14,21 +14,19 @@ import { List } from "@tamagui/lucide-icons";
 
 const TabLayout = () => {
   const { t } = useTranslation("", { keyPrefix: "tabs" });
-  const { t: tTrips } = useTranslation("", { keyPrefix: "tripsScreen" });
 
   return (
     <Tabs
-      initialRouteName="trips"
+      initialRouteName="index"
       screenOptions={{
-        headerShown: false,
+        tabBarActiveTintColor: colors.pinkRed,
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="explore"
         options={{
           title: t("explore"),
           tabBarIcon: ({ color }) => <SearchIcon color={color} />,
-          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
@@ -36,22 +34,21 @@ const TabLayout = () => {
         options={{
           title: t("wishlists"),
           tabBarIcon: ({ color }) => <HeartIcon color={color} />,
-          tabBarActiveTintColor: colors.pinkRed,
+          header: () => <Header title={t("wishlists")} />,
         }}
       />
       <Tabs.Screen
-        name="trips"
+        name="index"
         options={{
           title: t("trips"),
           headerShown: true,
           header: () => (
             <Header
-              title={tTrips("title")}
-              rightIcon={<List color="$black" size="$1.5" />}
+              title={t("trips")}
+              rightIcon={<List color="$black" size="$1" strokeWidth={2.75} />}
             />
           ),
           tabBarIcon: ({ color }) => <TripsIcon color={color} />,
-          tabBarActiveTintColor: colors.pinkRed,
         }}
       />
       <Tabs.Screen
@@ -59,7 +56,7 @@ const TabLayout = () => {
         options={{
           title: t("inbox"),
           tabBarIcon: ({ color }) => <MessagesIcon color={color} />,
-          tabBarActiveTintColor: colors.pinkRed,
+          header: () => <Header title={t("inbox")} />,
         }}
       />
       <Tabs.Screen
@@ -67,7 +64,7 @@ const TabLayout = () => {
         options={{
           title: t("profile"),
           tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
-          tabBarActiveTintColor: colors.pinkRed,
+          header: () => <Header title={t("profile")} />,
         }}
       />
     </Tabs>

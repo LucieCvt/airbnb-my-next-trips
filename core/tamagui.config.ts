@@ -2,7 +2,10 @@ import { defaultConfig } from "@tamagui/config/v5";
 import { createFont, createTamagui } from "tamagui";
 
 export const colors = {
+  white: "#FFFFFF",
   grayBackground: "#F2F2F2",
+  mediumGrayBackground: "#E9E9E9",
+  otherGrayBackground: "#F3F2EC",
   grayText: "#6A6A6A",
   blackText: "#222222",
   pinkRed: "#E31C5D",
@@ -50,15 +53,10 @@ const config = createTamagui({
     ...defaultConfig.themes,
     light: {
       ...defaultConfig.themes.light,
-      background: "#FFFFFF",
+      white: colors.white,
       grayBackground: colors.grayBackground,
-      blackBackground: colors.blackText,
-      grayText: colors.grayText,
-      pinkRed: colors.pinkRed,
-    },
-    dark: {
-      ...defaultConfig.themes.dark,
-      grayBackground: colors.grayBackground,
+      mediumGrayBackground: colors.mediumGrayBackground,
+      otherGrayBackground: colors.otherGrayBackground,
       blackBackground: colors.blackText,
       grayText: colors.grayText,
       pinkRed: colors.pinkRed,

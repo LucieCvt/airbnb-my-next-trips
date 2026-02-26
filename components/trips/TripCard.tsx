@@ -25,8 +25,8 @@ const TripCard = ({ trip, badgeText, footer }: TripCardProps) => {
 
   return (
     <Card>
-      <YStack padding="$2.5">
-        <ZStack aspectRatio={16 / 9} borderRadius="$7" overflow="hidden">
+      <YStack paddingHorizontal="$2.5" paddingTop="$2.5">
+        <ZStack aspectRatio={16 / 9} borderRadius={16} overflow="hidden">
           <Image
             src={trip.bookingImage}
             width="100%"
@@ -37,15 +37,16 @@ const TripCard = ({ trip, badgeText, footer }: TripCardProps) => {
         </ZStack>
       </YStack>
 
-      <YStack paddingHorizontal="$4" paddingBottom="$4" gap="$2">
-        <Text fontSize="$6.5" fontWeight="$7">
-          {trip.title}
-        </Text>
-        <Text color="$grayText" fontSize="$2" fontWeight="$6">
-          {dateRange} · {t("hostName")} : {trip.hostName}
-        </Text>
-
-        <Separator marginVertical="$3" />
+      <YStack paddingHorizontal="$4.5">
+        <YStack gap="$2" paddingVertical="$4.5">
+          <Text fontSize="$6.5" fontWeight="$7">
+            {trip.title}
+          </Text>
+          <Text color="$grayText" fontSize="$2" fontWeight="$6">
+            {dateRange} · {t("hostName")} : {trip.hostName}
+          </Text>
+        </YStack>
+        <Separator />
         {footer}
       </YStack>
     </Card>

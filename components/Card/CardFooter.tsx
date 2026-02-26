@@ -9,7 +9,11 @@ type CardFooterProps = {
 
 const CardFooter = ({ guestImage, buttonLabel }: CardFooterProps) => {
   return (
-    <XStack alignItems="center" justifyContent="space-between">
+    <XStack
+      alignItems="center"
+      justifyContent="space-between"
+      paddingVertical="$4.5"
+    >
       <Image
         src={guestImage}
         width={AVATAR_SIZE}
@@ -21,7 +25,7 @@ const CardFooter = ({ guestImage, buttonLabel }: CardFooterProps) => {
         accessibilityRole="button"
         accessibilityLabel={buttonLabel}
         backgroundColor="$grayBackground"
-        borderRadius="$5"
+        borderRadius={12}
         paddingVertical="$4"
         paddingHorizontal="$7"
         alignItems="center"

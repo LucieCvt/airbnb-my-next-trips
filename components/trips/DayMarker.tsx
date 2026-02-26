@@ -16,7 +16,7 @@ const DayMarker = ({ dayName, dayNumber, ...props }: DayMarkerProps) => (
       width={MARKER_SIZE}
       height={MARKER_SIZE}
       borderRadius={MARKER_SIZE / 2}
-      backgroundColor="$grayBackground"
+      backgroundColor="$mediumGrayBackground"
       justifyContent="center"
       alignItems="center"
       marginTop="$1"
