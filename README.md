@@ -118,6 +118,7 @@ Scan the QR code with **Expo Go** (Android) or the **Camera** app (iOS) to open 
 | `yarn format`       | Format all files with Prettier    |
 | `yarn format:check` | Check formatting (CI)             |
 | `yarn test`         | Run Jest tests                    |
+| `yarn precommit`    | Run lint, format check, and tests |
 
 ---
 

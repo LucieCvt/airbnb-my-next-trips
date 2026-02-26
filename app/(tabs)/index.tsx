@@ -13,7 +13,7 @@ const TripsScreen = () => {
 
   return (
     <ScrollView backgroundColor="$white">
-      <YStack flex={1} gap="$2" paddingHorizontal="$4">
+      <YStack flex={1} gap="$2" paddingHorizontal="$4" paddingBottom={20}>
         <Text fontSize="$6" fontWeight="$7" paddingVertical="$2">
           {trip.city}
         </Text>
